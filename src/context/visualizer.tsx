@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { SortingAlgorithmType } from "@/app/lib/types";
 import { MAX_ANIMATION_SPEED } from "@/app/lib/utils";
@@ -73,4 +73,3 @@ export const useSortingAlgorithmContext = () => {
   }
   return context;
 };
-
