@@ -6,6 +6,8 @@ import { useSortingAlgorithmContext } from "@/context/visualizer";
 import React, { useEffect } from "react";
 import { algorithmOptions } from "./lib/utils";
 import { SortingAlgorithmType } from "./lib/types";
+import { RxReset } from "react-icons/rx";
+import { FaPlayCircle } from "react-icons/fa";
 
 export default function Home() {
   const {
@@ -15,15 +17,20 @@ export default function Home() {
     animationSpeed,
     selectedAlgorithm,
     setSelectedAlgorithm,
+    requiresReset,
+    resetArrayAndAnimation,
   } = useSortingAlgorithmContext();
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedAlgorithm(e.target.value as SortingAlgorithmType);
   };
 
-  useEffect(() => {
-    console.log(selectedAlgorithm);
-  }, [selectedAlgorithm]);
+  const handlePlay = () => {
+    if (requiresReset) {
+      resetArrayAndAnimation();
+      return
+    }
+  };
 
   return (
     <main className="absolute top-0 h-screen w-screen z-[-2] bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#150229_1px)] bg-[size:40px_40px]">
@@ -47,6 +54,16 @@ export default function Home() {
                 defaultValue={selectedAlgorithm}
                 onChange={handleSelectChange}
               />
+              <button
+                className="flex items-center justify-center"
+                onClick={() => {}}
+              >
+                {requiresReset ? (
+                  <RxReset className="text-gray-400 h-8 w-8" />
+                ) : (
+                  <FaPlayCircle className="text-system-green60 h-8 w-8" />
+                )}
+              </button>
             </div>
           </div>
           <div className="relative h-[calc(100vh-66px)] w-full">

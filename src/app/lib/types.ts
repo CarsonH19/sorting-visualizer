@@ -10,3 +10,4 @@ export type SelectOptionsType = {
   label: string;
 };
 
+export type AnimationArrayType = [number[], boolean][];
