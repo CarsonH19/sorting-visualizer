@@ -69,6 +69,20 @@ export const SortingAlgorithmProvider = ({
     setArrayToSort(tempArray);
     setIsAnimationComplete(false);
     setIsSorting(false);
+
+    const highestId = window.setTimeout(() => {
+      for (let i = highestId; i >= 0; i--) {
+        window.clearTimeout(i);
+      }
+    }, 0);
+
+    setTimeout(() => {
+      const arrLines = document.getElementsByClassName("array-line");
+      for (let i = 0; i < arrLines.length; i++) {
+        arrLines[i].classList.remove("change-line-color");
+        arrLines[i].classList.add("default-line-color");
+      }
+    }, 0);
   };
 
   const runAnimation = (animations: AnimationArrayType) => {
