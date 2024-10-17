@@ -3,9 +3,9 @@
 import { Select } from "@/components/input/Select";
 import { Slider } from "@/components/input/Slider";
 import { useSortingAlgorithmContext } from "@/context/visualizer";
-import React, { useEffect } from "react";
-import { algorithmOptions, generateAnimationArray } from "./lib/utils";
-import { SortingAlgorithmType } from "./lib/types";
+import React from "react";
+import { algorithmOptions, generateAnimationArray } from "../lib/utils";
+import { SortingAlgorithmType } from "../lib/types";
 import { RxReset } from "react-icons/rx";
 import { FaPlayCircle } from "react-icons/fa";
 
