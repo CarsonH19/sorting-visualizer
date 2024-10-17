@@ -1,0 +1,46 @@
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+
+const socialMedia = [
+  {
+    id: 1,
+    link: "https://github.com/CarsonH19",
+    img: "/git.svg",
+  },
+  {
+    id: 2,
+    link: "www.linkedin.com/in/carson-harp-fullstack",
+    img: "/link.svg",
+  },
+];
+
+const Footer = () => {
+  return (
+    <footer className="z-10 py-2 flex flex-col justify-center items-center w-full">
+      <p className="md:text-base text-sm md:font-normal text-gray-400">
+        Copyright © 2024 Carson Harp
+      </p>
+
+      <div className="z-10 flex items-center justify-center md:gap-3 gap-6 mt-2">
+        {socialMedia.map((profile) => (
+          <div
+            key={profile.id}
+            className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-blur-lg saturate-180 bg-opacity-75 text-red-400 rounded-lg border border-gray-400 fill-red-400"
+          >
+            <Link href={profile.link}>
+              <Image
+                src={profile.img}
+                alt="Social Media Icon"
+                width={20}
+                height={20}
+              />
+            </Link>
+          </div>
+        ))}
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
