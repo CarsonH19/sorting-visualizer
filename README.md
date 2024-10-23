@@ -4,7 +4,7 @@ Sorting Visualizer is an interactive application that animates the sorting proce
 
 ## Why
 
-I built the Sorting Visualizer to provide an educational tool that visually demonstrates how different sorting algorithms work. My goal is to enhance understanding of algorithms, making learning more accessible and enjoyable for everyone.
+I built the Sorting Visualizer to provide an educational tool that visually demonstrates how different sorting algorithms work. My goal is to enhance understanding of algorithms, making learning more accessible and enjoyable for everyone, and to showcase my understanding of these computer science concepts.
 
 ## Live Site
 
